@@ -6,6 +6,11 @@ pipeline {
                 println "Build"
             }
         }
+        stage('单元测试') {
+            steps {
+                println('单元测试')
+            }
+        }
         stage('Test') {
             steps {
                 println "Test"

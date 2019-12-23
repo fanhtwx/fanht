@@ -1,15 +1,20 @@
 pipeline {
-	agent any
-	stages {
-		stage('test') {
-
-			steps {
-				echo 'Hello World'
-				sh 'ls -l /'
-				script {
-					sh 'cat /etc/passwd'
-				}
-			}
-		}
-	}
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                println "Build"
+            }
+        }
+        stage('Test') {
+            steps {
+                println "Test"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                println "Deploy"
+            }
+        }
+    }
 }

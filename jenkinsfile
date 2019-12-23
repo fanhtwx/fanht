@@ -8,7 +8,7 @@ pipeline {
         }
         stage('单元测试') {
             steps {
-                println('单元测试')
+                println "单元测试"
             }
         }
         stage('Test') {

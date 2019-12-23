@@ -6,6 +6,9 @@ pipeline {
 			steps {
 				echo 'Hello World'
 				sh 'ls -l /'
+				script {
+					sh 'cat /etc/passwd'
+				}
 			}
 		}
 	}

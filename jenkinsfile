@@ -11,7 +11,7 @@ pipeline{
         }
         stage('mvn test'){
             steps{
-                sh "mvn -B -f ${env.workspace}/pom.xml pmd:pmd"
+                sh "mvn -B -f ${env.WORKSPACE}/pom.xml pmd:pmd"
             }
         }
     }

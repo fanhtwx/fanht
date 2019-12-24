@@ -1,24 +1,15 @@
 pipeline {
-    agent any 
+    agent {
+        // 此处定义 agent 的细节
+    }
     environment {
-        // 使用 returnStdout
-        CC = """${sh(
-                returnStdout: true,
-                script: 'echo "clang"'
-            )}""" 
-        // 使用 returnStatus
-        EXIT_STATUS = """${sh(
-                returnStatus: true,
-                script: 'exit 1'
-            )}"""
+        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     }
     stages {
-        stage('Example') {
-            environment {
-                DEBUG_FLAGS = '-g'
-            }
+        stage('Example stage 1') {
             steps {
-                sh 'printenv'
+               sh 'printenv'
             }
         }
     }
